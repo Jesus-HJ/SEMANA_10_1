@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laptop Lenovo IdeaPad",
+    "precio_base": 2800.0,
+    "stock": 64,
+    "categoria": "electrónico",
+    "tipo": "electronico",
+    "garantia_meses": 12
+  },
+  {
+    "id": 2,
+    "nombre": "Monitor Full HD 24\"",
+    "precio_base": 650.0,
+    "stock": 15,
+    "categoria": "electrónico",
+    "tipo": "electronico",
+    "garantia_meses": 24
+  },
+  {
+    "id": 3,
+    "nombre": "Audífonos inalámbricos",
+    "precio_base": 280.0,
+    "stock": 0,
+    "categoria": "electrónico",
+    "tipo": "electronico",
+    "garantia_meses": 12
+  },
+  {
+    "id": 4,
+    "nombre": "Teclado mecánico RGB",
+    "precio_base": 240.0,
+    "stock": 7,
+    "categoria": "electrónico",
+    "tipo": "electronico",
+    "garantia_meses": 18
+  },
+  {
+    "id": 5,
+    "nombre": "Python para principiantes",
+    "precio_base": 120.0,
+    "stock": 30,
+    "categoria": "libro",
+    "tipo": "libro",
+    "autor": "Ana Gómez",
+    "es_libro_texto": true
+  },
+  {
+    "id": 6,
+    "nombre": "Clean Code",
+    "precio_base": 140.0,
+    "stock": 18,
+    "categoria": "libro",
+    "tipo": "libro",
+    "autor": "Robert C. Martin",
+    "es_libro_texto": false
+  },
+  {
+    "id": 7,
+    "nombre": "Fundamentos de algoritmos",
+    "precio_base": 180.0,
+    "stock": 12,
+    "categoria": "libro",
+    "tipo": "libro",
+    "autor": "Luis Torres",
+    "es_libro_texto": true
+  },
+  {
+    "id": 8,
+    "nombre": "Desarrollo de aplicaciones web",
+    "precio_base": 160.0,
+    "stock": 0,
+    "categoria": "libro",
+    "tipo": "libro",
+    "autor": "María Pérez",
+    "es_libro_texto": false
+  }
+]

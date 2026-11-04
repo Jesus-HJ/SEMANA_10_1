@@ -1,0 +1,27 @@
+__pycache__/
+.pytest_cache/
+.vscode/
+*.pyc
+.venv/
+.env
+# Caché de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Entorno virtual
+.venv/
+venv/
+
+# Configuración de VS Code
+.vscode/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Archivos temporales
+*.log
+.coverage
+htmlcov/

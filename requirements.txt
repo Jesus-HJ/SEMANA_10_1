@@ -1,0 +1,2 @@
+# Dependencias del núcleo CLI
+# Requiere Python 3.11 o superior

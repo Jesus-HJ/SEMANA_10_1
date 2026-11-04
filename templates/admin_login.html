@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Acceso administrador | TechBook Store{% endblock %}
+
+{% block content %}
+<main class="login-section">
+  <section class="login-card" aria-labelledby="loginTitle">
+    <span class="login-mark" aria-hidden="true">T.</span>
+    <span class="eyebrow">Acceso restringido</span>
+    <h1 id="loginTitle">Modo administrador</h1>
+    <p>Ingresa tus credenciales para gestionar el inventario de TechBook Store.</p>
+
+    {% if error %}
+    <div class="alert-error" role="alert">{{ error }}</div>
+    {% endif %}
+
+    <form method="POST" action="{{ url_for('admin_login') }}">
+      <div class="form-row">
+        <label for="username">Usuario</label>
+        <input id="username" name="username" type="text" autocomplete="username" required autofocus />
+      </div>
+      <div class="form-row">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" required />
+      </div>
+      <button class="btn btn-primary" type="submit">Entrar al administrador <span aria-hidden="true">→</span></button>
+    </form>
+    <a class="login-back" href="{{ url_for('clientes') }}">Volver al catálogo de clientes</a>
+  </section>
+</main>
+{% endblock %}

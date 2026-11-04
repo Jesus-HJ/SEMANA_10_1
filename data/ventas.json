@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "producto_id": 1,
+    "producto": "Laptop Lenovo IdeaPad",
+    "cantidad": 1,
+    "precio_unitario": 3138.8,
+    "total": 3138.8,
+    "fecha": "2026-11-04T13:46:06-05:00"
+  }
+]

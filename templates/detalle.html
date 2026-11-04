@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}{{ producto.nombre }} | TechBook Store{% endblock %}
+
+{% block content %}
+<section class="detail-section">
+  <div class="container detail-layout">
+    <div class="detail-visual">
+      <img src="{{ product_image(producto) }}" alt="{{ producto.nombre }}" />
+    </div>
+    <div class="detail-info">
+      <span class="eyebrow">Detalle del producto</span>
+      <h1>{{ producto.nombre }}</h1>
+      <div class="detail-meta">
+        <span>ID: {{ producto.id }}</span>
+        <span>Categoría: {{ producto.categoria.title() }}</span>
+      </div>
+      <div class="detail-price-box">
+        <div>
+          <span>Precio base</span>
+          <strong>{{ format_currency(producto.precio_base) }}</strong>
+        </div>
+        <div>
+          <span>Precio final</span>
+          <strong>{{ format_currency(producto.calcular_precio_final()) }}</strong>
+        </div>
+      </div>
+      <ul class="detail-list">
+        <li><strong>Stock:</strong> {{ producto.stock }} unidades</li>
+        {% if producto.categoria == 'electrónico' %}
+        <li><strong>Garantía:</strong> {{ producto.garantia_meses }} meses</li>
+        {% else %}
+        <li><strong>Autor:</strong> {{ producto.autor }}</li>
+        <li><strong>Libro de texto:</strong> {{ 'Sí' if producto.es_libro_texto else 'No' }}</li>
+        {% endif %}
+        <li><strong>Regla aplicada:</strong> {{ producto.regla_precio() }}</li>
+      </ul>
+      {% if purchase_error and not is_admin %}
+      <div class="alert-error" role="alert">{{ purchase_error }}</div>
+      {% endif %}
+      {% if is_admin %}
+      <p class="sold-out-notice">Las compras están deshabilitadas en el modo administrador.</p>
+      <a class="text-link detail-back" href="{{ url_for('admin') }}">← Volver a la administración</a>
+      {% elif producto.stock > 0 %}
+      <form id="compra" class="purchase-form" method="POST" action="{{ url_for('comprar_producto', producto_id=producto.id) }}">
+        <h2>Comprar este producto</h2>
+        <p>Completa tus datos para registrar una compra de demostración. No se realizará ningún pago.</p>
+        <div class="form-row">
+          <label for="nombreCliente">Nombre</label>
+          <input id="nombreCliente" name="nombre_cliente" type="text" maxlength="100" autocomplete="name" required />
+        </div>
+        <div class="form-row">
+          <label for="correoCliente">Correo electrónico</label>
+          <input id="correoCliente" name="correo" type="email" maxlength="150" autocomplete="email" required />
+        </div>
+        <div class="form-row">
+          <label for="cantidadCompra">Cantidad</label>
+          <input id="cantidadCompra" name="cantidad" type="number" min="1" max="{{ producto.stock }}" value="1" required />
+          <small>Disponibles: {{ producto.stock }}</small>
+        </div>
+        <button class="btn btn-primary" type="submit">Confirmar compra <span aria-hidden="true">→</span></button>
+      </form>
+      {% else %}
+      <p class="sold-out-notice">Este producto está agotado y no se puede comprar por ahora.</p>
+      {% endif %}
+      <a class="text-link detail-back" href="{{ url_for('clientes') }}">← Volver al catálogo</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
