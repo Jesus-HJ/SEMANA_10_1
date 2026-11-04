@@ -123,6 +123,22 @@ El menú ofrece:
 3. Calcular precio final
 4. Salir
 
+### Capturas de ejecución
+
+Las siguientes capturas muestran una ejecución exitosa del cálculo y dos excepciones controladas por la CLI. En ambos casos de error, el programa informa el problema y continúa mostrando el menú.
+
+**Caso exitoso: cálculo del precio final de la laptop (ID 1).**
+
+![Ejecución exitosa de la CLI](docs/capturas/cli-caso-exitoso.png)
+
+**Excepción de validación: opción de menú inválida.**
+
+![Excepción de validación capturada por la CLI](docs/capturas/cli-excepcion-validacion.png)
+
+**Excepción de búsqueda: producto inexistente (ID 9999).**
+
+![Excepción de producto no encontrado capturada por la CLI](docs/capturas/cli-excepcion-no-encontrado.png)
+
 ## 11. Web
 
 Inicia la aplicación Flask:
